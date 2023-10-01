@@ -1,9 +1,11 @@
-import './App.css';
+import Header from './header/Header';
+import HeroPage from './heroPage/HeroPage';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="bg-slate-50">
+      <Header />
+      <HeroPage />
     </div>
   );
 }
