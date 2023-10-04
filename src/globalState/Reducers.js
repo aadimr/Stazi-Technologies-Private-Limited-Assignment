@@ -13,7 +13,6 @@ const paginationSlice = createSlice({
   initialState,
   reducers: {
     setPage: (state, action) => {
-      console.log(action.payload)
       state.page = action.payload;
     },
     setLimit: (state, action) => {

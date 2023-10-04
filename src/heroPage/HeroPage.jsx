@@ -10,8 +10,6 @@ function HeroPage() {
 
     let { page, limit, searchValue, filteredCars } = useSelector(state => state.app)
 
-    console.log(filteredCars)
-
     let selectedCarData = (page, limit) => {
         let result = [];
         let startIndex = (page - 1) * limit;
@@ -32,7 +30,7 @@ function HeroPage() {
     return (
         <div className="m-6 flex flex-wrap gap-[1rem] min-h-screen">
             {
-                data.map((ele, index) => (
+                data[0] ? data.map((ele, index) => (
                     <div key={index} className="p-[.7rem] rounded-[1rem] bg-slate-100 shadow-lg h-[29rem]">
                         <img src={ele.image} alt="error" className="w-[25rem] h-[15rem] rounded-[1rem]" />
                         <div className="my-[1rem] mx-[.7rem] flex justify-between">
@@ -57,6 +55,8 @@ function HeroPage() {
                         </div>
                     </div>
                 ))
+                    :
+                    <p className='font-medium w-screen flex justify-center pt-[15rem]'>No such Car found on this page</p>
             }
         </div>
     )
